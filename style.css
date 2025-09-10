@@ -1,5 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --main: #e7f2ef;
+  --primary: #19183b;
+  --secondary: #a1c2bd;
+  --last: #e7f2ef;
+}
+html {
+  font-size: 10px; /* 1rem ==> 10px */
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .todoContainer {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--main);
+}
+.todoContainer h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin: 2rem;
+}
+.todoContainer .addNote {
+  margin-bottom: 2rem;
+}
+
+.todoContainer .addNote input:first-child {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  width: 350px;
+}
+.todoContainer .addNote input:last-child {
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 2rem;
+  color: var(--last);
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.addNote input:last-child:hover {
+  background-color: #26245e;
+}
+
+.todoContainer .notes {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+.notes .noteCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem;
+}
+
+.noteCard .note i {
+  cursor: pointer;
+}
+
+.noteCard .delete {
+  padding: 0.3rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  font-size: 1.4rem;
+}
+.noteCard .delete:hover {
+  background-color: var(--secondary);
+  transform: scale(1.2);
 }

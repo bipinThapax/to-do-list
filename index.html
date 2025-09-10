@@ -6,9 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <div class="container">
+        <div class="todoContainer">
+            <h1>To-Do List <i class="fa-solid fa-table-list"></i></h1>
+            <div class="addNote">
+                <input type="text" placeholder="Add your task">
+                <input type="submit" value="Add">
+            </div>
+            <div class="notes">
+                <div class="noteCard">
+                    <div class="note">
+                        <!-- <i class="fa-solid fa-circle-check"> </i> -->
+                        <i class="fa-regular fa-circle"></i> &nbsp; This is a note
+                    </div>
+                    <div class="delete"> <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 
