@@ -10,6 +10,7 @@
   --primary: #19183b;
   --secondary: #a1c2bd;
   --last: #e7f2ef;
+  --hover: #26245e;
 }
 html {
   font-size: 10px; /* 1rem ==> 10px */
@@ -25,23 +26,28 @@ html {
 
 .container .todoContainer {
   padding: 2rem;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
   background-color: var(--main);
+  min-width: 250px;
+  max-width: 38vw;
 }
 .todoContainer h1 {
   color: var(--primary);
   font-size: 2.5rem;
-  margin: 2rem;
+  margin-bottom: 2rem;
 }
 .todoContainer .addNote {
+  position: relative;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .todoContainer .addNote input:first-child {
-  padding: 1rem 2rem;
+  padding: 1rem 5rem 1rem 2rem;
   border: none;
+  outline: none;
   border-radius: 2rem;
-  width: 350px;
+  width: 100%;
 }
 .todoContainer .addNote input:last-child {
   padding: 1rem 2.5rem;
@@ -51,34 +57,48 @@ html {
   background-color: var(--primary);
   cursor: pointer;
   transition: background-color 0.3s ease;
+  position: absolute;
+  right: 0;
 }
 .addNote input:last-child:hover {
-  background-color: #26245e;
+  background-color: var(--hover);
 }
 
-.todoContainer .notes {
+.todoContainer .noteContainer {
   margin-bottom: 1.5rem;
   font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
 }
-.notes .noteCard {
+.noteContainer .noteCard {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 2px 3px var(--secondary);
+  padding: 1rem;
 }
-
+.noteCard .note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+}
 .noteCard .note i {
   cursor: pointer;
 }
 
 .noteCard .delete {
-  padding: 0.3rem 0.5rem;
+  padding: 0.1rem 0.3rem;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.35s ease;
+  transition: all 0.15s ease;
   font-size: 1.4rem;
+  transform: scale(0.9);
 }
 .noteCard .delete:hover {
   background-color: var(--secondary);
-  transform: scale(1.2);
+  transform: scale(1);
 }
