@@ -31,7 +31,8 @@ html {
   padding: 2rem;
   border-radius: 1.5rem;
   width: 40vw;
-  min-width: 38vw;
+  min-width: 250px;
+  max-width: 500px;
   height: fit-content;
   color: var(--primary);
   background-color: var(--card);
@@ -39,7 +40,7 @@ html {
 }
 .todoContainer h1 {
   color: var(--primary);
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   padding-left: 1rem;
   margin-bottom: 3.5rem;
 }
@@ -54,6 +55,7 @@ html {
   border: none;
   outline: none;
   border-radius: 2rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   width: 100%;
   background: #f1f1f1;
   color: var(--primary);
@@ -106,6 +108,7 @@ html {
   padding: 1.2rem 1.5rem;
   background-color: #fdfdfd;
   border: 1px solid #eee;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
 }
 .noteCard .note {
   display: flex;
@@ -133,4 +136,37 @@ html {
 .noteCard .delete:hover {
   background-color: var(--accent);
   color: white;
+}
+
+@media (max-width: 768px) {
+  .todoContainer {
+    width: 80vw;
+    padding: 1.5rem; /* slightly smaller padding */
+  }
+
+  .todoContainer h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    padding-left: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .addNote input {
+    padding: 0.8rem 4rem 0.8rem 1.5rem; /* adjust padding for smaller screens */
+  }
+
+  .addNote .addBtn {
+    padding: 0.7rem 1.2rem; /* smaller button */
+    top: 2px;
+    right: 2px;
+  }
+
+  .noteContainer .noteCard {
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .noteCard .note {
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
 }
