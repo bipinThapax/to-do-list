@@ -1,6 +1,6 @@
 let noteContainer = document.querySelector(".noteContainer")
 let input = document.querySelector(".addNote input")
-let addBtn = document.querySelector(".addNote input:last-child")
+let addBtn = document.querySelector(".addNote .addBtn")
 let checkMark;  // array of checks
 
 // adding note card in noteContainer
@@ -37,10 +37,12 @@ function addNote() {
         element.addEventListener("click", () => {
             if (!checked) {
                 element.innerHTML = ` <i class="fa-solid fa-circle-check"> </i>`
+                element.style.color = "var(--accent)"
                 element.parentElement.style.textDecoration = "line-through"
                 checked = true;
             } else {
                 element.innerHTML = ` <i class="fa-regular fa-circle"></i>`
+                element.style.color = "var(--primary)"
                 element.parentElement.style.textDecoration = "none"
                 checked = false;
             }

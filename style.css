@@ -6,11 +6,12 @@
   font-family: "Poppins", sans-serif;
 }
 :root {
-  --main: #e7f2ef;
-  --primary: #19183b;
-  --secondary: #a1c2bd;
-  --last: #e7f2ef;
-  --hover: #26245e;
+  --bg: #fdfdfd;
+  --card: #ffffff;
+  --primary: #4a4947;
+  --accent: #f77f00;
+  --accent-hover: #e06c00;
+  --muted: #d8d2c2;
 }
 html {
   font-size: 10px; /* 1rem ==> 10px */
@@ -18,7 +19,8 @@ html {
 .container {
   height: 100vh;
   width: 100%;
-  background-color: black;
+  color: var(--primary);
+  background-color: var(--muted);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,9 +29,12 @@ html {
 .container .todoContainer {
   padding: 2rem;
   border-radius: 1.5rem;
-  background-color: var(--main);
-  width: 30vw;
-  max-width: 38vw;
+  width: 40vw;
+  min-width: 38vw;
+  height: fit-content;
+  color: var(--primary);
+  background-color: var(--card);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .todoContainer h1 {
   color: var(--primary);
@@ -42,42 +47,48 @@ html {
   width: 100%;
 }
 
-.todoContainer .addNote input:first-child {
+.todoContainer .addNote input {
   padding: 1rem 5rem 1rem 2rem;
   border: none;
   outline: none;
   border-radius: 2rem;
   width: 100%;
+  background: #f1f1f1;
+  color: var(--primary);
 }
-.todoContainer .addNote input:last-child {
-  padding: 1rem 2.5rem;
+.todoContainer .addNote .addBtn {
+  padding: 0.85rem 1.5rem;
   border: none;
   border-radius: 2rem;
-  color: var(--last);
-  background-color: var(--primary);
+  color: var(--bg);
+  background-color: var(--accent);
   cursor: pointer;
-  transition: background-color 0.3s ease;
   position: absolute;
-  right: 0;
+  top: 2px;
+  right: 2px;
 }
-.addNote input:last-child:hover {
-  background-color: var(--hover);
+.addNote .addBtn:hover {
+  background-color: var(--accent-hover);
+}
+.addNote .addBtn i {
+  font-size: 1.8rem;
 }
 
 .todoContainer .noteContainer {
   margin-bottom: 1.5rem;
   font-size: 1.6rem;
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 1.5rem;
 }
 .noteContainer .noteCard {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0px 2px 3px var(--secondary);
   padding: 1rem;
+  background-color: #fdfdfd;
+  border: 1px solid #eee;
 }
 .noteCard .note {
   display: flex;
@@ -96,9 +107,9 @@ html {
   cursor: pointer;
   transition: all 0.15s ease;
   font-size: 1.4rem;
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 .noteCard .delete:hover {
-  background-color: var(--secondary);
-  transform: scale(1);
+  background-color: var(--accent);
+  color: white;
 }
