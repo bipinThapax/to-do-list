@@ -1,16 +1,15 @@
 let noteContainer = document.querySelector(".noteContainer")
 let input = document.querySelector(".addNote input")
 let addBtn = document.querySelector(".addNote input:last-child")
-let checkMark = document.body.getElementsByClassName("check")
-
+let checkMark;  // array of checks
 
 // adding note card in noteContainer
 function addNote() {
     if (input.value === "") {
         console.log("Note can't be empty!")
     } else {
-        noteContainer.innerHTML += `
-        <div class="noteCard">
+        let newCard =
+            `<div class="noteCard">
             <div class="note">
                 <div class="check">
                     <i class="fa-regular fa-circle"></i>
@@ -22,9 +21,40 @@ function addNote() {
             <div class="delete">
                 <i class="fa-solid fa-xmark"></i>
             </div>
-        </div>`
+          </div>`
+
+        // appending cards at the end of container
+        noteContainer.insertAdjacentHTML("beforeend", newCard)
         input.value = ""
     }
+
+    // updating checkboxes 
+    checkMark = document.getElementsByClassName("check")
+
+    // event listener to checks
+    let checked = false
+    Array.from(checkMark).forEach((element) => {
+        element.addEventListener("click", () => {
+            if (!checked) {
+                element.innerHTML = ` <i class="fa-solid fa-circle-check"> </i>`
+                element.parentElement.style.textDecoration = "line-through"
+                checked = true;
+            } else {
+                element.innerHTML = ` <i class="fa-regular fa-circle"></i>`
+                element.parentElement.style.textDecoration = "none"
+                checked = false;
+            }
+        })
+    })
+
+    // delete note 
+    let deleteBtn = document.getElementsByClassName("delete")
+    Array.from(deleteBtn).forEach((element) => {
+        element.addEventListener("click", () => {
+            element.parentElement.remove()
+        })
+    })
+
 }
 
 // note add through add btn
@@ -35,21 +65,4 @@ window.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         addNote()
     }
-})
-
-
-// note checked and unchecked with text-deco
-let checked = false
-Array.from(checkMark).forEach((element) => {
-    element.addEventListener("click", () => {
-        if (!checked) {
-            element.innerHTML = ` <i class="fa-solid fa-circle-check"> </i>`
-            element.parentElement.style.textDecoration = "line-through"
-            checked = true;
-        } else {
-            element.innerHTML = ` <i class="fa-regular fa-circle"></i>`
-            element.parentElement.style.textDecoration = "none"
-            checked = false;
-        }
-    })
 })

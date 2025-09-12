@@ -28,7 +28,7 @@ html {
   padding: 2rem;
   border-radius: 1.5rem;
   background-color: var(--main);
-  min-width: 250px;
+  width: 30vw;
   max-width: 38vw;
 }
 .todoContainer h1 {
