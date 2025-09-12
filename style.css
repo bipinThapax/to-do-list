@@ -12,6 +12,7 @@
   --accent: #f77f00;
   --accent-hover: #e06c00;
   --muted: #d8d2c2;
+  --border: #e0e0e0;
 }
 html {
   font-size: 10px; /* 1rem ==> 10px */
@@ -55,7 +56,14 @@ html {
   width: 100%;
   background: #f1f1f1;
   color: var(--primary);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease-in-out;
 }
+.addNote input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(247, 127, 0, 0.2);
+}
+
 .todoContainer .addNote .addBtn {
   padding: 0.85rem 1.5rem;
   border: none;
@@ -64,14 +72,22 @@ html {
   background-color: var(--accent);
   cursor: pointer;
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 3px;
+  right: 3px;
+  transition: all 0.35s ease;
 }
 .addNote .addBtn:hover {
   background-color: var(--accent-hover);
 }
 .addNote .addBtn i {
   font-size: 1.8rem;
+}
+
+.todoContainer .error {
+  margin: 0 auto;
+  width: 150px;
+  color: red;
+  font-size: 1.2rem;
 }
 
 .todoContainer .noteContainer {
@@ -84,9 +100,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 1.5rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
+  border-radius: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.5rem;
   background-color: #fdfdfd;
   border: 1px solid #eee;
 }
@@ -98,7 +114,11 @@ html {
   gap: 1rem;
 }
 .noteCard .note i {
+  font-size: 1.6rem;
   cursor: pointer;
+}
+.note i:hover {
+  color: var(--accent);
 }
 
 .noteCard .delete {
