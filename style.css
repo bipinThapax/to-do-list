@@ -40,7 +40,8 @@ html {
 .todoContainer h1 {
   color: var(--primary);
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  padding-left: 1rem;
+  margin-bottom: 3.5rem;
 }
 .todoContainer .addNote {
   position: relative;
